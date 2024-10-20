@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const{ PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
+const cors = require('cors');
+app.use(cors());
 app.use(express.json())
 
 
@@ -77,5 +79,5 @@ app.delete("/tasks/:id",async(req,res)=>{
 })
 
 
-const port = 3000
+const port = 5000
 app.listen(port)
